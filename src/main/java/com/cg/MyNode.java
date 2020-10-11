@@ -27,5 +27,4 @@ public class MyNode<K> implements AllNode<K> {
 	public void setKey(K key) {
 		this.key = key;
 	}
-
 }
