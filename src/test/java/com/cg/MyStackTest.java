@@ -24,4 +24,37 @@ public class MyStackTest {
 		
 		assertEquals(thirdNode,top);
 	}
+	@Test
+	public void given3NumberInStackWhenPoppedShouldMatchedLastAddedNode() {
+		MyNode<Integer> firstNode = new MyNode<Integer>(70);
+		MyNode<Integer> secondNode = new MyNode<Integer>(30);
+		MyNode<Integer> thirdNode = new MyNode<Integer>(56);
+
+		MyStack myStack = new MyStack();
+		myStack.push(firstNode);
+		myStack.push(secondNode);
+		myStack.push(thirdNode);
+
+		AllNode poppedNode = myStack.pop();
+		myStack.printStack();
+		assertEquals(thirdNode, poppedNode);
+	}
+
+	@Test
+	public void given3NumberInStackWhenPoppedAllShouldBeEmpty() {
+		MyNode<Integer> firstNode = new MyNode<Integer>(70);
+		MyNode<Integer> secondNode = new MyNode<Integer>(30);
+		MyNode<Integer> thirdNode = new MyNode<Integer>(56);
+
+		MyStack myStack = new MyStack();
+		myStack.push(firstNode);
+		myStack.push(secondNode);
+		myStack.push(thirdNode);
+
+		AllNode poppedLastNode = myStack.pop();
+		AllNode poppedSecondLastNode = myStack.pop();
+		AllNode poppedFirstNode = myStack.pop();
+
+		assertTrue(myStack.isEmpty());
+	}
 }
